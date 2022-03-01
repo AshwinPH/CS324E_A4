@@ -12,6 +12,8 @@ PShape star3;
 
 Bridge bridgeObject;
 
+PShape wheel, connector;
+DriveTrain drive;
 
 float counter;
 float c;
@@ -30,6 +32,11 @@ void setup() {
   sky = color(260,40,.8);
   background(sky); 
   colorMode(RGB, 255, 255,255);
+  
+  drive = new DriveTrain(wheel, connector,-100,400,0,20,40);
+  drive.create();
+  
+  
 }
 
 
@@ -59,4 +66,13 @@ void draw(){
   moon.move();
   mtn.display();
   bridgeObject.display();
+  
+  //drawing train wheels and crankshaft
+  drive.display();
+  drive.move(radians(5));
+  
+  if(drive.x > width+50){
+    drive.reset();
+  }
+  
 }
