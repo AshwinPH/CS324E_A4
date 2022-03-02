@@ -3,12 +3,16 @@ color orange = color(252,111,64);
 color dark = color(252,73,13);
 color brown = color(98,65,43);
 color cream = color(250,235,225);
+int smokespeed = 3;
 PShape train;
+Smoke smoke;
 
 
 void setup() {
   size(500,500);
   drawtrain();
+  smoke = new Smoke(387, 215,smokespeed);
+  smoke.display();
 }
 
 void drawtrain(){
@@ -147,11 +151,9 @@ void drawtrain(){
   train.addChild(window4);
   train.addChild(mainwincurve);
   train.addChild(mainwindow);
-  shape(train);
-  
-  
+  shape(train); 
 }
-  
-  
-  
- 
+
+//void draw() {
+  //smoke.display();
+//}
