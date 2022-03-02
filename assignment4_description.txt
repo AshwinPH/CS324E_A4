@@ -1,13 +1,20 @@
-
+Creators: Abigail Iovino, Malaika Jhaveri, Ashwin Hingwe
 
 Intended Animation:
+Our intended animation to create a train that rides along a bringe. We also implemented a day and night cycle that changes the color of the sky and displays the sun and moon respectively in an arc above the mountains.
 
 
 Usage of Included Classes:
+The landscape uses the following classes: Bridge, Mountain, CircleInTheSky, Sun, and Moon. The Mountain and Bridge class each have one instanstiation, but the Sun and the Moon are both subclasses of CircleInTheSky. They were built to be subclasses to avoid repeating code. The stars are themselves not a class, but a component of the moon class, since all of the lunar PShapes are grouped together and hence move in unison (though the stars twinkle to serve as a two-dimensional animation). 
 
 
 Unexpected Challenges:
+Implementing the day and night cycle was challenging. Since the moon and sun are different sizes, and hence moved at slightly different right and different paths, it was hard to sync up their cycles. This was accomplished with a lot of trial and error. The day and night cycle was also difficult to accomplish using the standard RGP color mode, but switching to HSB made it simple to dim or accentuate the brightness to correspond to the time of day. For this endeavor, I also made use of a counter to see exactly how many times draw was being called during a supposed twenty-four-hour cycle. Then I used this number and the default frame rate to adjust how the rate of change for the brightness. 
 
 
 Participation:
+Abi built the landscape and all of its classes. 
 
+
+Resources:
+None of the landscape SVG's were built by us. They were downloaded from https://freesvg.org/ and Wikipedia.
