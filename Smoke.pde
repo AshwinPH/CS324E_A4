@@ -1,33 +1,53 @@
 class Smoke {
   float x;
   float y;
-  float dx;
   float y1=250;
   PShape vector;
   
  
   
   Smoke(){}
-  Smoke(float x, float y, float dx) {
+  Smoke(PShape vector, float x, float y) {
     this.y = y;
-    this.dx = dx;              // instantiate parameters
+              // instantiate parameters
     this.x = x;
+    this.vector = vector;
   }
  
+   void create(){
+     vector = loadShape("smoke2.svg");
+   }
+   
    void display() {
-    vector = loadShape("smoke2.svg");
+    pushMatrix();
+    translate(x,y);
     scale(.5,.5);
-    shape(vector, x*2, y*2);
+    shape(vector, 0,0);
+    popMatrix();
+    
+    
+   }
+   
+   void move(float speed){
+     y -= speed;
+   }
+    /*
     if (y>-20) {
       translate(x, y);
       y-=dx;
     } else if (y<=-20) {
       reinitalize();
     }
-   }
+   */
 
 
   void reinitalize() {
     y=y1;
+  }
+  
+  void spawn(float x){
+      this.x = x;
+      y = 425;
+      println("debug");
   }
 }
