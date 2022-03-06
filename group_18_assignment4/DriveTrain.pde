@@ -69,13 +69,13 @@ class DriveTrain{
   }
   
   void move(float speed){
-    angle += speed;
+    angle += speed/r ;
     
-    x += r*speed;
+    x += speed;
   }
   
-  void reset(){
-   x = -50; 
+  void reset(float offset){
+   x = -70-offset; 
   }
   
   

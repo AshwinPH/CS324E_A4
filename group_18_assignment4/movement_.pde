@@ -1,4 +1,4 @@
-
+/*
 float x = 300;
 float y = 250;
 float dx = 2;
@@ -24,3 +24,5 @@ void draw() {
 void reinitalize() {
   y=250;
 }
+
+*/

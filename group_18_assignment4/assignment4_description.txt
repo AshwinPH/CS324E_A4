@@ -1,20 +1,24 @@
 Creators: Abigail Iovino, Malaika Jhaveri, Ashwin Hingwe
 
 Intended Animation:
-Our intended animation to create a train that rides along a bringe. We also implemented a day and night cycle that changes the color of the sky and displays the sun and moon respectively in an arc above the mountains.
+Our intended animation to create a train that rides along a bringe. The TRain would have rotating wheels connected by driveshafts, and puffs of smoke out of the chimney We also implemented a day and night cycle that changes the color of the sky and displays the sun and moon respectively in an arc above the mountains.
 
 
 Usage of Included Classes:
 The landscape uses the following classes: Bridge, Mountain, CircleInTheSky, Sun, and Moon. The Mountain and Bridge class each have one instanstiation, but the Sun and the Moon are both subclasses of CircleInTheSky. They were built to be subclasses to avoid repeating code. The stars are themselves not a class, but a component of the moon class, since all of the lunar PShapes are grouped together and hence move in unison (though the stars twinkle to serve as a two-dimensional animation). 
+The Train uses the Train, DriveTrain, and Smoke Classes. The Smoke class is used for the puffs of smoke, and uses parameters from the Train class (which draws the main train body) to inform its position. The DriveTrain class also derives position from the train and is layered on top of some of the existing, non-rotating wheels.
 
 
 Unexpected Challenges:
 Implementing the day and night cycle was challenging. Since the moon and sun are different sizes, and hence moved at slightly different right and different paths, it was hard to sync up their cycles. This was accomplished with a lot of trial and error. The day and night cycle was also difficult to accomplish using the standard RGP color mode, but switching to HSB made it simple to dim or accentuate the brightness to correspond to the time of day. For this endeavor, I also made use of a counter to see exactly how many times draw was being called during a supposed twenty-four-hour cycle. Then I used this number and the default frame rate to adjust how the rate of change for the brightness. 
-
+Trying to have the smoke rise directly upwards and not follow the train's x position took a lot of work. The train body class and smoke class were accidentally written as a standalone Processing Sketch, so we had to convert them into a form accessible by our main sketch file.
+A big challenge was in calculating the inverse kinematics for the main driveshaft. Originally, we wanted to emulate the piston movement of a combustion engine, but we ran out of time to make the equations for realistic crank-slider motion.
 
 Participation:
 Abi built the landscape and all of its classes. 
-
+Malaika designed the train body and the smoke class.
+Ashwin built the drivetrain class and composited all the train parts together, then integrated them into the scene over the landscape.
 
 Resources:
 None of the landscape SVG's were built by us. They were downloaded from https://freesvg.org/ and Wikipedia.
+Our original inspiration came from this art: https://dribbble.com/shots/4814198-Choo-choo

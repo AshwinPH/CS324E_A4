@@ -1,3 +1,0 @@
-Instructions to run the project:
-1. Open the file called <filename>
-2. ...
